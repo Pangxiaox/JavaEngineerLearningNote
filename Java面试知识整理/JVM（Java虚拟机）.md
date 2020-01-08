@@ -1,6 +1,7 @@
 # JVM（Java虚拟机）
 
 ### 1. JVM运行时数据区
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/01.PNG)
 
 有些区域随着虚拟机进程的启动而存在，有些区域则依赖用户线程的启动和结束而建立和销毁
 
@@ -56,13 +57,19 @@ java虚拟机规范对方法区的限制非常宽松，除了和Java堆一样不
 
 ### 2. 垃圾收集算法
 
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/02.PNG)
+
 - 标记——清除算法
 
 这是最基础的收集算法。算法分为“标记”和“清除”两阶段，首先标记出所有需要回收的对象，在标记完成后统一回收所有被标记的对象。它的主要不足有两个：一是效率问题，标记和清除两个过程的效率都不高；另一个是空间问题，标记清除之后会产生大量不连续的内存碎片，空间碎片太多可能会导致以后在程序运行过程中需要分配较大对象时，无法找到足够的连续内存而不得不提前触发另一次垃圾收集动作。
 
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/03.PNG)
+
 - 复制算法
 
 它将可用内存按容量划分为大小相等的两块，每次只使用其中一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已使用过的内存空间一次清理掉。这样使得每次都是对整个半区进行内存回收，内存分配时也就不用考虑内存碎片等复杂情况，只要移动堆顶指针，按顺序分配内存即可，实现简单，运行高效。只是这种算法的代价是将内存缩小为原来一半，未免太高了。
+
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/04.PNG)
 
 - 标记——整理算法
 
@@ -78,29 +85,42 @@ java虚拟机规范对方法区的限制非常宽松，除了和Java堆一样不
 
 ### 3. 垃圾收集器
 
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/05.PNG)
 
 
 如上图所示，如果两个收集器之间存在连线，就说明它们可以搭配使用。
+
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/06.PNG)
 
 - Serial收集器
 
 这个收集器是一个单线程的收集器，但它的“单线程”的意义并不仅仅说明它只会使用一个CPU或一条收集线程区完成垃圾收集工作，更重要的是在它进行垃圾收集时，必须暂停其他所有的工作线程，直到它收集结束。
 
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/07.PNG)
+
 - ParNew收集器
 
 ParNew收集器其实就是Serial收集器的多线程版本
+
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/09.PNG)
 
 - Parallel Scavenge收集器
 
 Parallel Scavenge收集器是一个新生代收集器，它也是使用复制算法的收集器，又是并行的多线程收集器。Parallel Scavenge收集器的特点是它的关注点与其他收集器不同，CMS等收集器的关注点是尽可能地缩短垃圾收集时用户线程的停顿时间，而Parallel Scavenge收集器的目标则是达到一个可控制的吞吐量（Throughput）。
 
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/08.PNG)
+
 - Serial Old收集器
 
 Serial Old是Serial收集器的老年代版本，它同样是一个单线程收集器，使用”标记——整理“算法。
 
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/09.PNG)
+
 - Parallel Old收集器
 
 Parallel Old是Parallel Scavenge收集器的老年代版本，使用多线程和”标记——整理“算法。这个收集器是在JDK 1.6中才开始提供。在注重吞吐量以及CPU资源敏感的场合，都可以优先考虑Parallel Scavenge加Parallel Old收集器。
+
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/10.PNG)
 
 - CMS收集器
 
@@ -117,6 +137,8 @@ CMS收集器有3个明显缺点：
 ②CMS收集器无法处理浮动垃圾，可能出现”Concurrent Mode Failure“失败而导致另一次Full GC产生
 
 ③CMS收集器采用的”标记——清除“算法会有大量空间碎片产生
+
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/11.PNG)
 
 - G1收集器
 
@@ -177,6 +199,8 @@ G1收集器之所以能建立可预测的停顿时间模型，是因为它可以
 
 主流的Java虚拟机里面没有选用引用计数算法来管理内存，其中最主要的原因是它很难解决对象之间相互循环引用的问题。
 
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/12.PNG)
+
 - 可达性分析算法
 
 通过一系列的称为GC Roots的对象作为起始点，从这些节点开始向下搜索，搜索所走过的路径称为引用链，当一个对象到GC Roots没有任何引用链相连，则证明此对象是不可用的。
@@ -210,6 +234,7 @@ G1收集器之所以能建立可预测的停顿时间模型，是因为它可以
 ### 6. 虚拟机类加载机制
 
 ##### 6.1 类加载的时机
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/13.PNG)
 
 类从被加载到虚拟机内存中开始，到卸载出内存为止，它的整个生命周期包括：加载、验证、准备、解析、初始化、使用和卸载7个阶段。其中验证、准备、解析3个部分统称为连接。
 
@@ -266,6 +291,7 @@ G1收集器之所以能建立可预测的停顿时间模型，是因为它可以
 类加载器虽然只用于实现类的加载动作，但它在Java程序中起到的作用却远远不限于类加载阶段。对于任意一个类，都需要由加载它的类加载器和这个类本身一同确立其在Java虚拟机中的唯一性，每一个类加载器，都拥有一个独立的类名称空间。
 
 **双亲委派模型**
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/JVM/14.PNG)
 
 - 从Java虚拟机的角度讲，只存在两种不同的类加载器：一种是启动类加载器（Bootstrap ClassLoader），这个类加载器使用C++语言实现，是虚拟机自身的一部分；另一种就是所有其他的类加载器，这些类加载器都由Java语言实现，独立于虚拟机外部，并且全部继承自抽象类java.lang.ClassLoader。
 - 从Java开发人员角度看，类加载器可分为：启动类加载器、扩展类加载器和应用程序类加载器。
