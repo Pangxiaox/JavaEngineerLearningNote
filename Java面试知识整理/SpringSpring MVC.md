@@ -52,11 +52,15 @@ IoC（Inversion of Control），控制反转，借助于“第三方”实现具
 
 ![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc5.png)  
 
+仅仅是为了修改轮胎的构造函数，这种设计却需要修改整个上层所有类的构造函数！所以我们需要进行控制反转(IOC)，即上层控制下层，而不是下层控制着上层。我们用依赖注入（Dependency Injection）这种方式来实现控制反转。所谓依赖注入，就是把底层类作为参数传入上层类，实现上层类对下层类的“控制”。  
+
 ![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc6.png)  
 
 ![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc7.png)  
 
 ![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc8.png)  
+
+这里只需要修改轮胎类就行了，不用修改其他任何上层类。这显然是更容易维护的代码。  
 
 
 
