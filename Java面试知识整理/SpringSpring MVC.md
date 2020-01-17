@@ -2,7 +2,7 @@
 
 ### 1. 为什么要使用Spring
 
-Spring是一个**轻量级**的**控制反转（IoC）**和**面向切面（AOP）**的容器框架
+Spring是一个**轻量级**的**控制反转**(IOC)和**面向切面**(AOP)的容器框架
 
 使用基本的JavaBean代替EJB，并提供了更多的企业应用功能，能够解决企业应用开发的复杂性
 
@@ -58,9 +58,11 @@ IoC（Inversion of Control），控制反转，借助于“第三方”实现具
 
 ![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc7.png)  
 
-![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc8.png)  
 
 这里只需要修改轮胎类就行了，不用修改其他任何上层类。这显然是更容易维护的代码。  
+
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc8.png)  
+
 
 
 
