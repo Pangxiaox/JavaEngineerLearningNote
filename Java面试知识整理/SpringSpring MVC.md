@@ -46,17 +46,17 @@ IoC（Inversion of Control），控制反转，借助于“第三方”实现具
 
 下面的例子展示了控制反转和依赖注入（DI，Dependency Injection）。
 
-![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc3.jpg)  
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc3.png)  
 
-![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc4.jpg)  
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc4.png)  
 
-![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc5.jpg)  
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc5.png)  
 
-![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc6.jpg)  
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc6.png)  
 
-![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc7.jpg)  
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc7.png)  
 
-![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc8.jpg)  
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc8.png)  
 
 
 
@@ -64,7 +64,7 @@ IoC（Inversion of Control），控制反转，借助于“第三方”实现具
 
 主要分为核心容器、数据访问/集成、Web、AOP、工具、消息和测试模块。
 
-![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/spring.webp)  
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/Spring.webp)  
 
 
 
@@ -127,7 +127,7 @@ Spring容器负责创建应用程序中的Bean同时通过ID来协调这些对�
 
 
 ### 10. Spring MVC运行流程  
-![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/springmvc.webp)  
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/SpringMVC.webp)  
 
 ①用户向服务器发送请求，请求被Spring前端控制Servlet DispatcherServlet捕获
 
