@@ -30,11 +30,13 @@ AOP把软件系统分为两个部分：核心关注点和横切关注点。业�
 
 ### ⭐3. 解释什么是IoC
 
-IoC（Inversion of Control），控制反转，借助于“第三方”实现具有依赖关系的对象之间的解耦。
+IoC（Inversion of Control），控制反转，借助于“第三方”实现具有依赖关系的对象之间的解耦。  
 
-**放图**
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc1.jpg)
 
-软件系统在没有引入IoC容器前，对象A依赖于对象B，对象A在初始化或者运行到某一点时，自己必须主动去创建对象B或者使用已经创建的对象B，无论是创建还是使用对象B，控制权都在自己手中。
+软件系统在没有引入IoC容器前，对象A依赖于对象B，对象A在初始化或者运行到某一点时，自己必须主动去创建对象B或者使用已经创建的对象B，无论是创建还是使用对象B，控制权都在自己手中。  
+
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc2.jpg)  
 
 软件系统在引入IoC后，对象A与对象B失去了直接联系，当对象A运行到需要对象B的时候，IoC容器会主动创建一个对象B注入到对象A需要的地方。
 
@@ -44,7 +46,17 @@ IoC（Inversion of Control），控制反转，借助于“第三方”实现具
 
 下面的例子展示了控制反转和依赖注入（DI，Dependency Injection）。
 
-**放图**
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc3.jpg)  
+
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc4.jpg)  
+
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc5.jpg)  
+
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc6.jpg)  
+
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc7.jpg)  
+
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/ioc8.jpg)  
 
 
 
@@ -52,7 +64,7 @@ IoC（Inversion of Control），控制反转，借助于“第三方”实现具
 
 主要分为核心容器、数据访问/集成、Web、AOP、工具、消息和测试模块。
 
-**放图**
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/spring.webp)  
 
 
 
@@ -114,9 +126,8 @@ Spring容器负责创建应用程序中的Bean同时通过ID来协调这些对�
 
 
 
-### 10. Spring MVC运行流程
-
-**放图**
+### 10. Spring MVC运行流程  
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/IOC/springmvc.webp)  
 
 ①用户向服务器发送请求，请求被Spring前端控制Servlet DispatcherServlet捕获
 
