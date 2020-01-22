@@ -143,7 +143,10 @@ List<Customer> list = query.list();
 
 - Transient（瞬时）：对象刚new出来，还没设置id，设了其他值
 - Persistent（持久）：调用了  `save()`、`saveOrUpdate()`，就变成Persistent，有id
-- Detached（脱管）：当 session `close()`完之后，就变成Detached
+- Detached（脱管）：当 session `close()`完之后，就变成Detached  
+
+![image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/Hibernate-Objectstate.webp)  
+
 
 
 
