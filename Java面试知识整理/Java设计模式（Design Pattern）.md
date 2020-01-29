@@ -122,9 +122,9 @@ public class Singleton{
 
 ##### 2.2 观察者模式
 
-又叫做“发布——订阅”模式，定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象，这个主题对象在状态变化时，会通知所有的观察者对象，是他们可以自动更新自己。
+又叫做“发布——订阅”模式，定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象，这个主题对象在状态变化时，会通知所有的观察者对象，是他们可以自动更新自己。  
 
-放图
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/DesignPattern.jpg)  
 
 
 
