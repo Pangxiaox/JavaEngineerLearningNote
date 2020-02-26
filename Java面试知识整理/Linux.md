@@ -8,9 +8,9 @@
 
 
 
-### VIM三个模式
+### VIM三个模式  
 
-**放图**
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/VIM.png)  
 
 - 一般指令模式：VIM默认模式，可以用于移动游标查看内容
 - 编辑模式：按下“i”等按键后进入，可以对文本进行编辑
