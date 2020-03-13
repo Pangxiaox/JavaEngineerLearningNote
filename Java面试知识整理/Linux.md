@@ -8,9 +8,9 @@
 
 
 
-### VIM三个模式
+### VIM三个模式  
 
-**放图**
+![Image text](https://github.com/Pangxiaox/JavaEngineerLearningNote/blob/master/Notes-Pic/VIM.png)  
 
 - 一般指令模式：VIM默认模式，可以用于移动游标查看内容
 - 编辑模式：按下“i”等按键后进入，可以对文本进行编辑
@@ -47,7 +47,9 @@ cp：复制文件（cp a b：将目录下的a文件复制一份为b文件）
 
 rm：删除文件
 
-mv：移动文件
+mv：移动文件  
+
+pwd：显示工作目录(绝对路径)  
 
 pwd：显示工作目录（绝对路径）
 
@@ -178,7 +180,9 @@ who：关机前用who命令查看有没有其他用户在线
 
 sync：为加快对磁盘文件读写速度，位于内存中的文件数据不会立即同步到磁盘，因此关机前需要先进行sync同步操作
 
-sudo：允许一般用户使用root可执行的命令，只有在/etc/sudoers配置文件中添加的用户才能使用该指令
+sudo：允许一般用户使用root可执行的命令，只有在/etc/sudoers配置文件中添加的用户才能使用该指令  
+
+ifconfig：显示或设置网络设备  
 
 ifconfig：显示或设置网络设备
 
